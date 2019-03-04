@@ -20,6 +20,14 @@ namespace SnakeAndLadders.Test
             _game.MoveBy(3);
             _game.TokenPosition.Should().Be(100);
             _game.Won.Should().BeTrue();
-        }        
+        }
+
+        [Fact]
+        public void WhenResultingTokenPositionIsOutOfBounds_ThenTokenPositionIsNotChanged_AndGameIsNotWon()
+        {
+            _game.MoveBy(4);
+            _game.TokenPosition.Should().Be(97);
+            _game.Won.Should().BeTrue();
+        }
     }
 }
