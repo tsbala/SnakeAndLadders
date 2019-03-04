@@ -2,16 +2,16 @@ namespace SnakeAndLadders
 {
     public class Game
     {
-        public int TokenPosition { get; }
+        public int TokenPosition { get; private set; }
 
         public Game()
         {
             TokenPosition = 1;
         }
 
-        public void MoveBy(int i)
+        public void MoveBy(int steps)
         {
-            throw new System.NotImplementedException();
+            TokenPosition += steps;
         }
     }
 }

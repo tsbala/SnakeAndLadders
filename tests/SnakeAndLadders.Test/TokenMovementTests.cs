@@ -23,6 +23,7 @@ namespace SnakeAndLadders.Test
         public void GivenTokenIsOnSquareOne_WhenTokenIsMovedByThreeSpaces_ThenTokeIsOnSquareFour()
         {
             _game.MoveBy(3);
+            _game.TokenPosition.Should().Be(4);
         }
     }
 }
