@@ -8,5 +8,10 @@ namespace SnakeAndLadders
         {
             TokenPosition = 1;
         }
+
+        public void MoveBy(int i)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
