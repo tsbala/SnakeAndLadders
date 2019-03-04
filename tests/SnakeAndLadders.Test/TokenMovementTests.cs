@@ -1,4 +1,3 @@
-using System;
 using FluentAssertions;
 using Xunit;
 
@@ -6,7 +5,7 @@ namespace SnakeAndLadders.Test
 {
     public class TokenMovementTests
     {
-        private Game _game;
+        private readonly Game _game;
 
         public TokenMovementTests()
         {
@@ -24,6 +23,14 @@ namespace SnakeAndLadders.Test
         {
             _game.MoveBy(3);
             _game.TokenPosition.Should().Be(4);
+        }
+        
+        [Fact]
+        public void GivenTokenIsOnSquareOne_WhenTokenIsMovedByThreeAndThenFourSpaces_ThenTokenIsOnSquareEight()
+        {
+            _game.MoveBy(3);
+            _game.MoveBy(4);
+            _game.TokenPosition.Should().Be(8);
         }
     }
 }

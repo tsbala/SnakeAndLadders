@@ -2,16 +2,18 @@ namespace SnakeAndLadders
 {
     public class Game
     {
-        public int TokenPosition { get; private set; }
+        public int TokenPosition => _token.Position; 
+
+        private readonly Token _token;
 
         public Game()
         {
-            TokenPosition = 1;
+            _token = new Token();
         }
 
-        public void MoveBy(int steps)
+        public void MoveBy(int spaces)
         {
-            TokenPosition += steps;
+            _token.MoveBy(spaces);
         }
     }
 }
