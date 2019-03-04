@@ -2,7 +2,8 @@ namespace SnakeAndLadders
 {
     public class Game
     {
-        public int TokenPosition => _token.Position; 
+        public int TokenPosition => _token.Position;
+        public bool Won { get; }
 
         private readonly Token _token;
 
