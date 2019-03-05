@@ -16,6 +16,16 @@ namespace SnakeAndLadders.Test
         public void WhenPlayerRollsDice_ThenResultShouldBeBetweenOneAndSix()
         {
             _dice.Roll().Should().BeInRange(1, 6);
-        }        
+        } 
+        
+        [Fact]
+        public void WhenPlayerRollsDice_ThenPositionInGameShouldMoveByDiceRoll()
+        {
+            var diceRoll =_dice.Roll();
+            var game = new Game();
+            var currentPosition = game.TokenPosition;
+            game.MoveBy(diceRoll);
+            game.TokenPosition.Should().Be(currentPosition + diceRoll);
+        }
     }
 }
