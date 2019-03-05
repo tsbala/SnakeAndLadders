@@ -1,10 +1,16 @@
+using System;
+
 namespace SnakeAndLadders
 {
     public class Dice
     {
-        public int Roll()
+        private readonly Random _random;
+
+        public Dice()
         {
-            throw new System.NotImplementedException();
+            _random = new Random();
         }
+        
+        public int Roll() => _random.Next(1, 6);
     }
 }
