@@ -11,6 +11,6 @@ namespace SnakeAndLadders
             _random = new Random();
         }
         
-        public int Roll() => _random.Next(1, 6);
+        public int Roll() => _random.Next(1, 7);
     }
 }
