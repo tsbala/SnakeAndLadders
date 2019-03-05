@@ -3,11 +3,11 @@ using Xunit;
 
 namespace SnakeAndLadders.Test
 {
-    public class WinGameTests
+    public class WinTheGameTests
     {
         private readonly Game _game;
 
-        public WinGameTests()
+        public WinTheGameTests()
         {
             _game = new Game();
             _game.MoveBy(96);
@@ -23,11 +23,11 @@ namespace SnakeAndLadders.Test
         }
 
         [Fact]
-        public void WhenResultingTokenPositionIsOutOfBounds_ThenTokenPositionIsNotChanged_AndGameIsNotWon()
+        public void WhenNextTokenPositionIsOutOfBounds_ThenTokenPositionIsNotChanged_AndGameIsNotWon()
         {
             _game.MoveBy(4);
             _game.TokenPosition.Should().Be(97);
-            _game.Won.Should().BeTrue();
+            _game.Won.Should().BeFalse();
         }
     }
 }

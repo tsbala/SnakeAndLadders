@@ -23,7 +23,11 @@ namespace SnakeAndLadders
 
         public void MoveBy(int spaces)
         {
-            _token.MoveBy(spaces);
+            var nextPosition = TokenPosition + spaces;
+            if (nextPosition <= _winningPosition)
+            {
+                _token.MoveBy(spaces);
+            }            
         }
     }
 }
