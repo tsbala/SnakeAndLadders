@@ -23,7 +23,7 @@ namespace SnakeAndLadders.Test
         }
 
         [Fact]
-        public void WhenNextTokenPositionIsOutOfBounds_ThenTokenPositionIsNotChanged_AndGameIsNotWon()
+        public void WhenMoveByIsOutOfBounds_ThenTokenPositionIsNotChanged_AndGameIsNotWon()
         {
             _game.MoveBy(4);
             _game.TokenPosition.Should().Be(97);
